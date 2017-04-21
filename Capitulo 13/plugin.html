@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>teste plugin</title>
+        <link href="stylesheets/default.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="stylesheets/validador.css" media="screen" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p>
+            <label for="cpf">Teste CPF: </label>
+            <input type="text" maxlength="14" size="18" id="cpf" class="teste-plugin-cpf">
+        </p>
+        <p>
+            <label for="obrigatorio">Teste Obrigadorio</label>
+            <input type="text" maxlength="14" size="18" id="obrigatorio" class="obrigatorio">
+        </p>
+
+        <p>
+            <label for="obrigatorio">Teste maskMoney</label>
+            <input type="text" id="valor" class="obrigatorio" >
+        </p>
+        <div id="chardiv"></div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous">
+         </script>
+         <script
+             src="plugin_jquery/plugin.js"
+             type='text/javascript'>
+          </script>
+          <script
+              src="plugin_jquery/maskMoney.js"
+              type='text/javascript'>
+           </script>
+           <script
+               src="plugin_jquery/jquery.jqplot.js"
+               type='text/javascript'>
+            </script>
+
+
+
+          <script>
+
+                var obrigatorio = function(text){
+                    return text.trim() !== "";
+                }
+
+
+                /* teste por ID */
+                $("#cpf").validador();
+                $(".obrigatorio").validador({function:obrigatorio});
+                /* teste por classe
+                $(".teste-plugin-cpf").validador();
+                */
+
+                /* teste Plugin maskMoney */
+                $("#valor").maskMoney(
+                    {
+                        prefix     : "R$ ",
+                        thousands  : ".",
+                        decimal    : ","
+                    }
+                );
+
+                /* teste Plugin jqplot */
+                $.jqplot('chardiv',
+                    [
+                        [
+                            [1,2],
+                            [3,5.12],
+                            [5,13.1],
+                            [7,33.6],
+                            [9,85.9],
+                            [11,219.9]
+
+                        ]
+
+                    ]
+                );
+
+
+
+          </script>
+
+
+    </body>
+</html>

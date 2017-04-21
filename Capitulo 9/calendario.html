@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>teste JQueryUI</title>
+        <link rel="stylesheet" href="css/jquery-ui.css">
+    </head>
+
+
+    <body>
+
+        <label for="nascimento0">(html5)Data de Nascimento : </label>
+        <input type="date" id="nascimento0" value="2010-02-08">
+
+        <div class="ui-widget">
+            <label for="nascimento">(datepicker sem parametro)Data de Nascimento:</label>
+            <input type="text" id="nascimento">
+        </div>
+        <div class="ui-widget">
+            <label for="nascimento2">(datepicker com parametro)Data de Nascimento:</label>
+            <input type="text" id="nascimento2">
+        </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous">
+         </script>
+         <script
+             src="js/jquery-ui.js"
+             type='text/javascript'>
+          </script>
+
+         <script>
+             $(function(){
+                 $("#nascimento").datepicker();
+                 $("#nascimento2").datepicker(
+                     {
+                         showWeek: true,
+                         firstDay: 1,
+                         dataFormat: "dd/mm/yy",
+                         dayNames:[
+                                     "Domingo",
+                                     "Segunda-Feira",
+                                     "Terça-Feira",
+                                     "Quarta-Feira",
+                                     "Quinta-Feira",
+                                     "Sexta-Feira",
+                                     "sabado"
+                                  ],
+                        dayNamesMin:[
+                                      "Dom",
+                                      "Seg",
+                                      "Ter",
+                                      "Qua",
+                                      "Qui",
+                                      "Sex",
+                                      "sab"
+                                ],
+                        monthNames:[
+                                    "Janeiro",
+                                    "Fevereiro",
+                                    "Março",
+                                    "Abril",
+                                    "Maio",
+                                    "Junho",
+                                    "Julho",
+                                    "Agosto",
+                                    "Setembro",
+                                    "Outubro",
+                                    "Novembro",
+                                    "Dezembro"
+                                ],
+                        monthNamesShort:[
+                                    "Jan",
+                                    "Fev",
+                                    "Mar",
+                                    "Abr",
+                                    "Mai",
+                                    "Jun",
+                                    "Jul",
+                                    "Ago",
+                                    "Set",
+                                    "Out",
+                                    "Nov",
+                                    "Dez"
+                                ],
+                        showButtonPanel: true,
+                        currentText: "Hoje",
+                        closeText: "Fechar",
+                        weekHeader: "#"
+                     }
+                 );
+             })
+
+         </script>
+    </body>
+</html>

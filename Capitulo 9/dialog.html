@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>teste JQueryUI</title>
+        <link rel="stylesheet" href="css/jquery-ui.css">
+    </head>
+
+
+    <body>
+
+        <div id="dialog" title="Aviso do Sistema">
+            <p>Você acho que esse é o melhor livro de javascript que já existiu?</p>
+        </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous">
+         </script>
+         <script
+             src="js/jquery-ui.js"
+             type='text/javascript'>
+          </script>
+
+         <script>
+             $(function(){
+
+                    function onSimClick(){
+                        alert("Legal! Você escolheu sim");
+                        $(this).dialog("close");
+                    }
+
+                    function onClaroClick(){
+                        alert("\\o//");
+                        $(this).dialog("close");
+                    }
+
+                    var opcoes = {
+                        buttons:{
+                            "Sim":onSimClick,
+                            "Claro":onClaroClick
+                        }
+                    }
+                    $("#dialog").dialog(opcoes);
+             })
+
+         </script>
+    </body>
+</html>
